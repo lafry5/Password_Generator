@@ -5,11 +5,15 @@
 // numbers: lists the numbers 8 - 128
 // uppercase: lists the upper case letters
 // passwordlength: the length of the password (should be between 8 and 128)
+// confirmSpecChars: ok or cancel to use special characters
+// confirmlowercase: ok or cancel to use lowercase
+// confirmuppercase: ok or cancel to use uppercase
+// confirmnumbers: ok or cancel to use numbers
 
 passwordlength = 0;
-// var specChars = [" ", "!",""", "#", "$", "%", "&", "'", "(", "(", "*", "+", ",", "-", ".", "/", ":", ";", "<", "=", ">", "?", "@", "[", "\", "]", "^", "_", "'", "{", "|", "}", "~"]
-var lowercase = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
-var uppercase = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
+// var specChars = [" ", "!", "#", "$", "%", "&", "'", "(", "(", "*", "+", ",", "-", ".", "/", ":", ";", "<", "=", ">", "?", "@", "[", "\", "^", "{", "|",~"];
+var lowercase = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
+var uppercase = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
 
 // Collect the user's response if they want to generate a password
 var userResponse = confirm('Do you want to generate a password');
@@ -43,10 +47,16 @@ if (userResponse === true) {
   } //end of for loop, i loops 3 times
 
   if (passwordlength >=8 || passwordlength <=128) {
-    alert('We will execute code here to ask for characters')
-  } else {
+    
+    var confirmSpecChars = confirm('Would you like to use special characters in your password?');
+    var confirmlowercase = confirm('Would you like to use lowercase letters in your password?');
+    var confirmuppercase = confirm('Would you like to use uppercase letters in your password?');
+    var confirmnumbers = confirm('Would you like to use numbers in your password?');
+
+   } else {
     alert('You exceeded the number of attempts to enter a number between 8 and 128')
   }
+
 
 
 // User chose not to generate a password. The end!                  Why is this still appearing if the pw is generated?
