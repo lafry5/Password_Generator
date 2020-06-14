@@ -43,7 +43,7 @@ if (userResponse === true) {
       console.log(passwordlength);
 
   //Check password length and execute code if the password lengths falls within the bounds
-  for (var i = 0; i < 3; i++) { // Allow for several attempts at entering the password length
+    for (var i = 0; i < 3; i++) { // Allow for several attempts at entering the password length
       if (passwordlength < 8 || passwordlength > 128) { //Is the password outside of the password bounds?
          var passwordlenth = prompt('Enter a number between 8 and 128!');
         console.log(passwordlength);
@@ -55,101 +55,106 @@ if (userResponse === true) {
         } else  (passwordlength >= 8 || passwordlength <= 128); { // Is the password inside the bounds?
           alert("You chose a password length of " + passwordlength);
           i = 2;
-            } //end of else statement that checks password length inside the bounds    
+        } //end of else statement that checks password length inside the bounds    
 
-          } //end of if statement to check bounds of password length
+        } //end of if statement to check bounds of password length
        // if (i = 2 && passwordlength < 8 && passwordlength > 128 ); {
        //   alert('You exceeded the number of attempts to enter a number between 8 and 128. Refresh the browser and start, again');
        //   }  
-        } //end of for loop, i loops 3 times
+      } //end of for loop, i loops 3 times
 
-  if (passwordlength >=8 || passwordlength <=128) {
+    if (passwordlength >=8 || passwordlength <=128) {
+          var confirmSpecChars = confirm('Would you like to use special characters in your password?');
+          
+          if (confirmSpecChars === true) {
+
+            var randNumber = Math.floor(Math.random() * specChars.length)
+            var randomCharacter = specChars[randNumber]
+              //alert(randomCharacter + ' is your special character');
+          } else {
+            alert('You chose not to have special characters');
+          }
+        
+        var confirmlowercase = confirm('Would you like to use lowercase letters in your password?');
     
-    var confirmSpecChars = confirm('Would you like to use special characters in your password?');
+        if (confirmlowercase) {
     
-      if (confirmSpecChars === true) {
-
-        var randNumber = Math.floor(Math.random() * specChars.length)
-        var randomCharacter = specChars[randNumber]
-          //alert(randomCharacter + ' is your special character');
-      } else {
-        alert('You chose not to have special characters');
-      }
+          var randNumber = Math.floor(Math.random() * lowercase.length)
+          var randomletter = lowercase[randNumber]
+            //alert(randomletter + ' is your lowercase letter');
+        } else {
+          alert('You chose not to have lowercase letters');
+        }
     
-    var confirmlowercase = confirm('Would you like to use lowercase letters in your password?');
-
-    if (confirmlowercase) {
-
-      var randNumber = Math.floor(Math.random() * lowercase.length)
-      var randomletter = lowercase[randNumber]
-        //alert(randomletter + ' is your lowercase letter');
-    } else {
-      alert('You chose not to have lowercase letters');
+        var confirmuppercase = confirm('Would you like to use uppercase letters in your password?');
+    
+        if (confirmuppercase) {
+    
+          var randNumberupper = Math.floor(Math.random() * uppercase.length)
+          var randomletterupper = uppercase[randNumberupper]
+            // alert(randomletterupper + ' is your uppercase letter');
+        } else {
+          alert('You chose not to have uppercase letters');
+        }
+    
+        var confirmnumbers = confirm('Would you like to use numbers in your password?');
+    
+        if (confirmnumbers) {
+    
+          var randNumber2 = Math.floor(Math.random() * numbers.length)
+          var randomrandomnumber = numbers[randNumber2]
+            //alert(randomrandomnumber + ' is your random number');
+        } else {
+          alert('You chose not to have numbers');
+        }
     }
+      
 
-    var confirmuppercase = confirm('Would you like to use uppercase letters in your password?');
+      if (!confirmnumbers && !confirmuppercase && !confirmlowercase && !confirmSpecChars ) {
+            console.log('Executed the code where all four characters have not been selected') //Verify one character type is selected
+            alert('You did not select any characters. Refresh the browser and start, again')
+          } else { // Else execute the code where at least one character has been selected
+            console.log("Executed code where at least one character has been selected")
+            alert('We will generate the password');
+            //Generate password
+            //<button onclick="generatePassword()">Click me</button>
+                for(l=0;l<passwordlength;l++){
+                  console.log(l + ' is looping through the password length');
+                  // newNumber = Math.floor(Math.random() * passwordlength);
+                  var upper = randomletterupper+1;
+                  var y = upper.toString();
 
-    if (confirmuppercase) {
+                  var Char = randomCharacter+1;
+                  var x = Char.toString();
 
-      var randNumberupper = Math.floor(Math.random() * uppercase.length)
-      var randomletterupper = uppercase[randNumberupper]
-        // alert(randomletterupper + ' is your uppercase letter');
-    } else {
-      alert('You chose not to have uppercase letters');
-    }
+                  var low = randomletter+1;
+                  var z = low.toString();
 
-    var confirmnumbers = confirm('Would you like to use numbers in your password?');
+                  var num = randomrandomnumber+1;
+                  var a = num.toString();
 
-    if (confirmnumbers) {
+                  finalProduct = finalProduct + x + y + z + a;
+                  console.log(finalProduct);
+                  console.log(x);
+                  console.log(y);
+                  console.log(z);
+                  console.log(a);
+                } // end of for loop looping through l (length of password length)
+            } //end of if statement
 
-      var randNumber2 = Math.floor(Math.random() * numbers.length)
-      var randomrandomnumber = numbers[randNumber2]
-        //alert(randomrandomnumber + ' is your random number');
-    } else {
-      alert('You chose not to have numbers');
-    }
+            console.log(finalProduct.length + 'final product length');
+            console.log(passwordlength + 'password length');
 
-   if (!confirmnumbers && !confirmuppercase && !confirmlowercase && !confirmSpecChars ) {
-        console.log('Executed the code where all four characters have not been selected') //Verify one character type is selected
-        alert('You did not select any characters. Refresh the browser and start, again')
-      }
-      console.log("Executed code where at least one character has been selected")
-      alert('We will generate the password');
-      //Generate password
-      //<button onclick="generatePassword()">Click me</button>
-      for(l=0;l<passwordlength;l++){
-        console.log(l + ' is looping through the password length');
-        // newNumber = Math.floor(Math.random() * passwordlength);
-        var upper = randomletterupper;
-        var y = upper.toString();
-
-        var Char = randomCharacter;
-        var x = Char.toString();
-
-        var low = randomletter;
-        var z = low.toString();
-
-        var num = randomrandomnumber;
-        var a = num.toString();
-
-        finalProduct = finalProduct + x + y + z + a;
-        console.log(finalProduct);
-        console.log(x);
-        console.log(y);
-        console.log(z);
-        console.log(a);
-      } // end of for loop looping through l (length of password length)
-
-      if(finalProduct.length > passwordlength) {
-        NewNumber = finalProduct.length - passwordlength;
-        console.log(NewNumber);
-        finalProduct.length = NewNumber;
-        console.log(finalProduct);
-        alert('Password is ' + finalProduct);
-
-      }
-
-    } //end of if that verifies that at least one of four characters has been selected 
+                        if(finalProduct.length > passwordlength) {
+                        NewNumber = finalProduct.length - passwordlength;
+                        console.log(NewNumber + 'is the NewNumber');
+                        finalProduct.length = NewNumber;
+                        console.log(finalProduct + 'is the finalProduct');
+                        alert('Password is ' + finalProduct);
+                      }
+    //  }               
+ 
+ //end of if that verifies that at least one of four characters has been selected 
     
 
 

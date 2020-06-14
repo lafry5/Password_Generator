@@ -18,3 +18,30 @@ THEN a password is generated that matches the selected criteria
 WHEN the password is generated
 THEN the password is either displayed in an alert or written to the page
 
+Sample screenshot of the from the password generator challenge:
+
+![screenshot](screenshot.jpg)
+
+
+REPOSITORY TITLE: lafry5/Password_Generator
+    
+    Copied starter code from coding-boot-camp/friendly-parakeet. Updated the script.js file.
+
+
+Repository Link: https://github.com/lafry5/Password_Generator
+
+Github Page: https://lafry5.github.io/Password_Generator/
+
+
+
+TABLE OF CONTENTS:
+    
+    -  Clone
+ 
+    -  Setup
+ 
+    -  Contributing
+
+    -  Description
+ 
+    -  Support
