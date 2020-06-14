@@ -1,13 +1,13 @@
 // variables are...
-// userResponse y or n
+// userResponse true or cancel
 //
 
 // Collect the user's response if they want to generate a password
-var userResponse = prompt('Do you want to generate a password');
+var userResponse = confirm('Do you want to generate a password');
     console.log(userResponse)
 
 // Only run logic if user chose a valid option
-if (userResponse === 'true' {
+if (userResponse === true) {
   alert('You chose ' + userResponse);
   console.log('You chose' + userResponse);
 }
