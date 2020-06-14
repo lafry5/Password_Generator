@@ -10,12 +10,23 @@
 // confirmuppercase: ok or cancel to use uppercase
 // confirmnumbers: ok or cancel to use numbers
 // randNumber: random number
+// randomCharacter: random character
+// randomletter: lowercase random letter
+// randomletterupper: uppercase random letter
+
 
 passwordlength = 0;
-//var specChars = [" ", "!", "#", "$", "%", "&", "'", "(", "(", "*", "+", ",", "-", ".", "/", ":", ";", "<", "=", ">", "?", "@", "[", "\", "^", "{", "|",~"];
-var specChars = [\!, \$, \%, \&];
+var specChars = ["!", "#", "$", "%", "&", "'", "(", "(", "*", "+", ",", "-", ".", "/", ":", "<", "=", ">", "?", "@", "\", "^", ~"];
 var lowercase = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
 var uppercase = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
+var numbers = [];
+
+  for(var J = 0; J <= 9; J++){ // Create an array of numbers
+    numbers.push(J);
+  }
+  console.log(numbers); 
+
+
 
 // Collect the user's response if they want to generate a password
 var userResponse = confirm('Do you want to generate a password');
@@ -51,15 +62,50 @@ if (userResponse === true) {
   if (passwordlength >=8 || passwordlength <=128) {
     
     var confirmSpecChars = confirm('Would you like to use special characters in your password?');
+    
+      if (confirmSpecChars === true) {
+
+        var randNumber = Math.floor(Math.random() * specChars.length)
+        var randomCharacter = specChars[randNumber]
+          alert(randomCharacter + ' is your special character');
+      } else {
+        alert('You chose not to have special characters');
+      }
+    
     var confirmlowercase = confirm('Would you like to use lowercase letters in your password?');
+
+    if (confirmlowercase === true) {
+
+      var randNumber = Math.floor(Math.random() * lowercase.length)
+      var randomletter = lowercase[randNumber]
+        alert(randomletter + ' is your lowercase letter');
+    } else {
+      alert('You chose not to have lowercase letters');
+    }
+
     var confirmuppercase = confirm('Would you like to use uppercase letters in your password?');
+
+    if (confirmuppercase === true) {
+
+      var randNumberupper = Math.floor(Math.random() * uppercase.length)
+      var randomletterupper = uppercase[randNumberupper]
+        alert(randomletterupper + ' is your uppercase letter');
+    } else {
+      alert('You chose not to have uppercase letters');
+    }
+
     var confirmnumbers = confirm('Would you like to use numbers in your password?');
 
-    var randNumber = Math.floor(Math.random() *4)
-    var randomCharacter = specChars[randNumber]
-      console.log(randNumber);
-      console.log(randomCharacter);
+    if (confirmnumbers === true) {
 
+      var randNumber2 = Math.floor(Math.random() * numbers.length)
+      var randomrandomnumber = numbers[randNumber2]
+        alert(randomrandomnumber + ' is your random number');
+    } else {
+      alert('You chose not to have numbers');
+    }
+
+    
    } else {
     alert('You exceeded the number of attempts to enter a number between 8 and 128')
   }
