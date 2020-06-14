@@ -57,6 +57,8 @@ if (userResponse === true) {
             } //end of else statement that checks password length inside the bounds    
 
           } //end of if statement to check bounds of password length
+       if (i = 2 && !passwordlength);
+          alert('You exceeded the number of attempts to enter a number between 8 and 128. Refresh the browser and start, again');
   } //end of for loop, i loops 3 times
 
   if (passwordlength >=8 || passwordlength <=128) {
@@ -74,7 +76,7 @@ if (userResponse === true) {
     
     var confirmlowercase = confirm('Would you like to use lowercase letters in your password?');
 
-    if (confirmlowercase === true) {
+    if (confirmlowercase) {
 
       var randNumber = Math.floor(Math.random() * lowercase.length)
       var randomletter = lowercase[randNumber]
@@ -85,7 +87,7 @@ if (userResponse === true) {
 
     var confirmuppercase = confirm('Would you like to use uppercase letters in your password?');
 
-    if (confirmuppercase === true) {
+    if (confirmuppercase) {
 
       var randNumberupper = Math.floor(Math.random() * uppercase.length)
       var randomletterupper = uppercase[randNumberupper]
@@ -96,7 +98,7 @@ if (userResponse === true) {
 
     var confirmnumbers = confirm('Would you like to use numbers in your password?');
 
-    if (confirmnumbers === true) {
+    if (confirmnumbers) {
 
       var randNumber2 = Math.floor(Math.random() * numbers.length)
       var randomrandomnumber = numbers[randNumber2]
@@ -105,10 +107,15 @@ if (userResponse === true) {
       alert('You chose not to have numbers');
     }
 
+   if (!confirmnumbers && !confirmuppercase && !confirmlowercase && !confirmSpecChars ) {
+        console.log('Executed the code where all four characters have not been selected') //Verify one character type is selected
+        alert('You did not select any characters. Refresh the browser and start, again')
+      }
+      console.log("Executed code where at least one character has been selected")
+      alert('We will generate the password');
+      //Generate password
+    } //end of if that verifies that at least one of four characters has been selected 
     
-   } else {
-    alert('You exceeded the number of attempts to enter a number between 8 and 128')
-  }
 
 
 
