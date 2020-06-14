@@ -16,6 +16,7 @@
 
 
 passwordlength = 0;
+finalProduct = '0';
 var specChars = ["!", "#", "$", "%", "&", "'", "(", "(", "*", "+", ",", "-", ".", "/", ":", "<", "=", ">", "?", "@", "\", "^", ~"];
 var lowercase = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
 var uppercase = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
@@ -70,7 +71,7 @@ if (userResponse === true) {
 
         var randNumber = Math.floor(Math.random() * specChars.length)
         var randomCharacter = specChars[randNumber]
-          alert(randomCharacter + ' is your special character');
+          //alert(randomCharacter + ' is your special character');
       } else {
         alert('You chose not to have special characters');
       }
@@ -81,7 +82,7 @@ if (userResponse === true) {
 
       var randNumber = Math.floor(Math.random() * lowercase.length)
       var randomletter = lowercase[randNumber]
-        alert(randomletter + ' is your lowercase letter');
+        //alert(randomletter + ' is your lowercase letter');
     } else {
       alert('You chose not to have lowercase letters');
     }
@@ -92,7 +93,7 @@ if (userResponse === true) {
 
       var randNumberupper = Math.floor(Math.random() * uppercase.length)
       var randomletterupper = uppercase[randNumberupper]
-        alert(randomletterupper + ' is your uppercase letter');
+        // alert(randomletterupper + ' is your uppercase letter');
     } else {
       alert('You chose not to have uppercase letters');
     }
@@ -103,7 +104,7 @@ if (userResponse === true) {
 
       var randNumber2 = Math.floor(Math.random() * numbers.length)
       var randomrandomnumber = numbers[randNumber2]
-        alert(randomrandomnumber + ' is your random number');
+        //alert(randomrandomnumber + ' is your random number');
     } else {
       alert('You chose not to have numbers');
     }
@@ -115,8 +116,39 @@ if (userResponse === true) {
       console.log("Executed code where at least one character has been selected")
       alert('We will generate the password');
       //Generate password
-      //<button onclick="myFunction()">Click me</button>
       //<button onclick="generatePassword()">Click me</button>
+      for(l=0;l<passwordlength;l++){
+        console.log(l + ' is looping through the password length');
+        // newNumber = Math.floor(Math.random() * passwordlength);
+        var upper = randomletterupper;
+        var y = upper.toString();
+
+        var Char = randomCharacter;
+        var x = Char.toString();
+
+        var low = randomletter;
+        var z = low.toString();
+
+        var num = randomrandomnumber;
+        var a = num.toString();
+
+        finalProduct = finalProduct + x + y + z + a;
+        console.log(finalProduct);
+        console.log(x);
+        console.log(y);
+        console.log(z);
+        console.log(a);
+      } // end of for loop looping through l (length of password length)
+
+      if(finalProduct.length > passwordlength) {
+        NewNumber = finalProduct.length - passwordlength;
+        console.log(NewNumber);
+        finalProduct.length = NewNumber;
+        console.log(finalProduct);
+        alert('Password is ' + finalProduct);
+
+      }
+
     } //end of if that verifies that at least one of four characters has been selected 
     
 
@@ -129,7 +161,7 @@ if (userResponse === true) {
 //} //end of if statement that checks if user wants to generate a password
 
 
-
+// The following code was provided
 // Get references to the #generate element
 
 var generateBtn = document.querySelector("#generate");
