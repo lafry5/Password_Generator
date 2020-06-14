@@ -45,3 +45,30 @@ TABLE OF CONTENTS:
     -  Description
  
     -  Support
+
+
+Clone:
+    Clone this repo to your local machine using https://lafry5.github.io/Password_Generator/
+    
+
+Setup:
+    Ensure that all files are located in the root folder (Index, Readme file, screenshot, script and and style).
+
+
+Contributing:
+    Starter code was provided for this assignment from coding-boot-camp/friendly-parakeet.
+
+
+Description:
+    This code will take inputs from the user and will generate a random password. Inputs that can be provided are the password length and whether the user would like special characters, upper and lower case, as well as numbers included in their password.  
+
+    Examples of the screenshots are as follows:
+
+    
+ 
+Support:
+    Reach out to me at one of the following places!
+
+    Email: lafry5@yahoo.com 
+    Cell: (602) 363-0253
+     
