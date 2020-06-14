@@ -57,9 +57,10 @@ if (userResponse === true) {
             } //end of else statement that checks password length inside the bounds    
 
           } //end of if statement to check bounds of password length
-       if (i = 2 && !passwordlength);
-          alert('You exceeded the number of attempts to enter a number between 8 and 128. Refresh the browser and start, again');
-  } //end of for loop, i loops 3 times
+       // if (i = 2 && passwordlength < 8 && passwordlength > 128 ); {
+       //   alert('You exceeded the number of attempts to enter a number between 8 and 128. Refresh the browser and start, again');
+       //   }  
+        } //end of for loop, i loops 3 times
 
   if (passwordlength >=8 || passwordlength <=128) {
     
@@ -114,6 +115,8 @@ if (userResponse === true) {
       console.log("Executed code where at least one character has been selected")
       alert('We will generate the password');
       //Generate password
+      //<button onclick="myFunction()">Click me</button>
+      //<button onclick="generatePassword()">Click me</button>
     } //end of if that verifies that at least one of four characters has been selected 
     
 
