@@ -8,6 +8,8 @@ for (var J = 0; J <= 9; J++) { // Create an array of numbers
 }
 console.log(numbers);
 
+alert("Push generate password to begin."); 
+
 function userOptions() {
     var userChoice = {}; //This is an empty object
     var passwordlength = prompt('How long would you like your password to be? Choose 8 to 128');
