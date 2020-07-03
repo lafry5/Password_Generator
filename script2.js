@@ -8,7 +8,8 @@ for (var J = 0; J <= 9; J++) { // Create an array of numbers
 }
 console.log(numbers);
 
-alert("Push generate password to begin."); 
+// alert("Push generate password to begin."); 
+
 
 function userOptions() {
     var userChoice = {}; //This is an empty object
@@ -71,6 +72,8 @@ function generatePassword() {
     return result.join("");
 }
 
+var generatebutton = document.querySelector("#generate");
+generatebutton.addEventListener("click", writePassword);
 
 function writePassword() {
     var password = generatePassword();
@@ -85,5 +88,3 @@ function getrandom(arr) {
     return randomelement;
 }
 
-var generatebutton = document.querySelector("#generate");
-generatebutton.addEventListener("click", writePassword);

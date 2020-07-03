@@ -60,11 +60,9 @@ Contributing:
 
 
 Description:
-    This code will take inputs from the user and will generate a random password. Inputs that can be provided are the password length and whether the user would like special characters, upper and lower case, as well as numbers included in their password.  
+    This code will create a work day schedule for the current day (from 9am - 5pm). The schedule is color coded as follows: hours in the past are grey, the current hour is red, and hours in the future are green. The code will allow an input next to each hour from the user. If the user pushes the save button next to an input it will persist; if not the input will not be saved.  
 
-    Examples of the screenshots are as follows:
-
-![screenshot](screenshot1.jpg)
+    Examples screenshots are as follows:
 
 ![screenshot](screenshot2.jpg)
 
@@ -72,15 +70,9 @@ Description:
 
 ![screenshot](screenshot4.jpg)
 
-![screenshot](screenshot5.jpg)
-
-![screenshot](screenshot6.jpg)
-
-![screenshot](screenshot7.jpg)
-
  
 Support:
-    Reach out to me at one of the following places!
+    Reach out to me at one of the following places if you have any questions!
 
     Email: lafry5@yahoo.com 
     Cell: (602) 363-0253
